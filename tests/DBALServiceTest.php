@@ -9,6 +9,6 @@ class DBALServiceTest extends PHPUnit_Framework_TestCase
 {
     public function testEnumExists()
     {
-        //Placeholder
+        $this->assertTrue(true);
     }
 }
