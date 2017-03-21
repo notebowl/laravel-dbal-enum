@@ -9,7 +9,11 @@ class DBALServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        Type::addType('enum', DBALEnum::class);
+        if (Type::hasType('enum')) {
+            Type::overrideType('enum', DBALEnum::class);
+        } else {
+            Type::addType('enum', DBALEnum::class);
+        }
         $this->app['db']->connection()->getDoctrineSchemaManager()->getDatabasePlatform()->registerDoctrineTypeMapping('enum', 'enum');
     }
 }
