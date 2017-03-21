@@ -1,5 +1,5 @@
 {
-    "name": "notebowl/laravel-dbal-enum",
+    "name": "notebowl/laravel-dbal",
     "description": "Resolves issues in the dbal library via service provider. Provides a direct fix for laravel/framework#1186",
     "keywords": ["laravel", "notebowl", "doctrine", "dbal", "enum"],
     "license": "Apache",

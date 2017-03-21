@@ -2,14 +2,15 @@
 
 namespace NB\Utilities\Doctrine;
 
+use Doctrine\DBAL\Types\Type;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class DBALServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->app->singleton('dbalhelper', function ($app) {
-            return new DBALHelper();
-        });
+        Type::addType('enum', DBALEnum::class);
+        Schema::getConnection()->getDoctrineSchemaManager()->getDatabasePlatform()->registerDoctrineTypeMapping('enum', 'enum');
     }
 }
