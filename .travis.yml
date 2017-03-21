@@ -10,6 +10,7 @@ php:
 before_script:
   - composer self-update
   - composer install --no-interaction --prefer-source --dev
+  - mysql -h 127.0.0.1 -u root -e "CREATE DATABASE test";
 
 cache:
   directories:
