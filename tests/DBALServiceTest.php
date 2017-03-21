@@ -63,6 +63,7 @@ class DBALServiceTest extends PHPUnit_Framework_TestCase
         $items = [
             'database' => ['default' => 'default'],
             'app' => ['providers' => [
+                'Illuminate\Cache\CacheServiceProvider',
                 DBALServiceProvider::class,
             ]],
         ];
