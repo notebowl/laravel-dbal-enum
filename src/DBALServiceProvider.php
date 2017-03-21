@@ -14,6 +14,6 @@ class DBALServiceProvider extends ServiceProvider
         } else {
             Type::addType('enum', DBALEnum::class);
         }
-        $this->app['db']->connection()->getDoctrineSchemaManager()->getDatabasePlatform()->registerDoctrineTypeMapping('enum', 'enum');
+        $this->app['db']->getDoctrineSchemaManager()->getDatabasePlatform()->registerDoctrineTypeMapping('enum', 'enum');
     }
 }
