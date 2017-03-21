@@ -10,10 +10,12 @@ php:
 before_script:
   - composer self-update
   - composer install --no-interaction --prefer-source --dev
+  - composer update
   - mysql -h 127.0.0.1 -u root -e "CREATE DATABASE test";
 
 cache:
   directories:
     - $HOME/.composer/cache
+    - $HOME/vendor
 
 script: vendor/bin/phpunit
